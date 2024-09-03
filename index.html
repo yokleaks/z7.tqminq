@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yok Leaks</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 2000px;;
+        }
+
+        .title {
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 30px;
+            position: relative;
+            top: 40px;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            top: 100px;
+        }
+
+        .slides {
+            display: none;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            margin-top: -25px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            outline: none;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .caption {
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            position: relative;
+            top: 100px;
+        }
+
+        .comments {
+            max-width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            top: 100px;
+        }
+
+        .comments h2 {
+            margin-bottom: 10px;
+        }
+
+        .comment {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .comment:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .prev, .next {
+                width: 40px;
+                height: 40px;
+            }
+
+            .title, .caption {
+                
+                padding: 8px 16px;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .modal-content h3 {
+            margin-bottom: 20px;
+        }
+
+        .modal-content a {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            border-radius: 5px;
+        }
+
+        .modal-content a:hover {
+            background-color: gray;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1 class="title">Yok Leaks</h1>
+
+
+<p class="caption">Nudes of Meriam Mortaji</p>
+
+<div class="slideshow-container">
+    <img src="Meriam-1.jpg" class="slides active" alt="Slide 1">
+    <img src="Meriam-2 (1).jpg" class="slides" alt="Slide 2">
+    <img src="Meriam-3 (1).jpg" class="slides" alt="Slide 3">
+    <img src="IMG_0402.jpeg" class="slides" alt="Slide 4">
+    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+</div>
+
+
+<div class="comments">
+    <h2>Comments</h2>
+    <div class="comment">
+        <strong>Justin:</strong> Off her pussy is so hot
+    </div>
+    <div class="comment">
+        <strong>sharingiscaring:</strong> Her tits look good in clothes but even better completely naked
+    </div>
+    <div class="comment">
+        <strong>canhefkiu:</strong> I wish I could fuck her
+    </div>
+</div>
+
+<!-- The Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <h3>You need to log in or create an account to continue</h3>
+        <a href="https://yokleaks.github.io/login/">Login</a>
+        <a href="https://yokleaks.github.io/register/">Create Account</a>
+    </div>
+</div>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slides");
+    const modal = document.getElementById("loginModal");
+
+    function changeSlide(n) {
+        slides[slideIndex].classList.remove("active");
+        slideIndex = (slideIndex + n + slides.length) % slides.length;
+        slides[slideIndex].classList.add("active");
+
+        if (slideIndex === slides.length - 1) {
+            // Show the modal after the last slide
+            modal.style.display = "flex";
+        }
+    }
+
+    // Close the modal if the user clicks outside of the modal content
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
